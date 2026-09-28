@@ -74,6 +74,19 @@ cd backend && pytest -q            # 28 тестов API и парсера
 cd frontend && npm run lint && npx tsc -b && npm run build
 ```
 
+## Работа в VS Code
+
+Откройте файл `smart-todo.code-workspace` (File → Open Workspace from File) — он подхватит
+настройки, рекомендуемые расширения и готовые задачи:
+
+- `Terminal → Run Build Task` (Ctrl+Shift+B) — запускает бэкенд и фронтенд одновременно.
+- `Terminal → Run Test Task` — прогоняет pytest.
+- `Run and Debug` (F5) → «Всё приложение (backend + frontend)» — отладка FastAPI с брейкпоинтами
+  и открытие интерфейса в Chrome.
+
+Перед первым запуском выполните задачи `backend: install deps` и `frontend: install deps`
+(Terminal → Run Task).
+
 ## Структура репозитория
 
 ```

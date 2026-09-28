@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: FastAPI (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["app.main:app", "--reload", "--port", "8471"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "windows": { "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe" },
+      "jinja": false,
+      "justMyCode": true
+    },
+    {
+      "name": "Backend: pytest (debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["-q"],
+      "cwd": "${workspaceFolder}/backend",
+      "python": "${workspaceFolder}/backend/.venv/bin/python",
+      "windows": { "python": "${workspaceFolder}/backend/.venv/Scripts/python.exe" },
+      "justMyCode": true
+    },
+    {
+      "name": "Frontend: открыть в Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://127.0.0.1:4317",
+      "webRoot": "${workspaceFolder}/frontend/src",
+      "preLaunchTask": "frontend: dev server"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Всё приложение (backend + frontend)",
+      "configurations": ["Backend: FastAPI (debug)", "Frontend: открыть в Chrome"],
+      "stopAll": true
+    }
+  ]
+}

@@ -19,7 +19,11 @@ dist/
 
 # IDE / OS
 .idea/
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 .DS_Store
 
 # Uploads (исходное задание, не часть проекта)
