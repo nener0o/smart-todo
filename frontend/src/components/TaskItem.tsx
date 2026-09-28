@@ -46,7 +46,7 @@ export function TaskItem({ task, categories, onToggle, onUpdate, onDelete }: Pro
 
   return (
     <li
-      className={`group flex items-start gap-3 rounded-xl border bg-white px-4 py-3 shadow-sm transition-colors ${
+      className={`flex items-start gap-3 rounded-xl border bg-white px-4 py-3 shadow-sm transition-colors ${
         overdue ? 'border-rose-200' : 'border-slate-200'
       } ${task.is_done ? 'opacity-60' : ''}`}
     >
@@ -81,7 +81,7 @@ export function TaskItem({ task, categories, onToggle, onUpdate, onDelete }: Pro
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-1 opacity-100 sm:opacity-0 sm:transition-opacity sm:group-hover:opacity-100 sm:group-focus-within:opacity-100">
+      <div className="flex shrink-0 items-center gap-1">
         <Button variant="ghost" size="sm" onClick={() => setEditing(true)} disabled={busy} aria-label="Редактировать">
           Изменить
         </Button>
